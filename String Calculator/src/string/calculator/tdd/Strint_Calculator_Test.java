@@ -12,4 +12,13 @@ public class Strint_Calculator_Test {
 		int result = str.Add(" ");
 		assertEquals(0, result);
 	}
+	
+	@Test
+	public void addOneStringTest()
+	{
+		stringCalculator str = new stringCalculator();
+		int result = str.Add("1");
+		assertEquals(1, result);
+	}
+
 }
