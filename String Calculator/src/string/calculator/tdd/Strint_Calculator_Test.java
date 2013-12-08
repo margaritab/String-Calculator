@@ -28,4 +28,12 @@ public class Strint_Calculator_Test {
 		int result = str.Add("2");
 		assertEquals(2, result);
 	}
+	
+	@Test
+	public void addStringWithCommaTest()
+	{
+		stringCalculator str = new stringCalculator();
+		int result = str.Add("1,2");
+		assertEquals(3, result);
+	}
 }
