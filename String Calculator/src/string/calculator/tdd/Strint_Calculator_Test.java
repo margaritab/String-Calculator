@@ -20,5 +20,12 @@ public class Strint_Calculator_Test {
 		int result = str.Add("1");
 		assertEquals(1, result);
 	}
-
+	
+	@Test
+	public void addTwoStringTest()
+	{
+		stringCalculator str = new stringCalculator();
+		int result = str.Add("2");
+		assertEquals(2, result);
+	}
 }
