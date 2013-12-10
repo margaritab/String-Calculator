@@ -70,4 +70,12 @@ public class Strint_Calculator_Test {
 		int result = str.Add("//;\n1;2");
 		assertEquals(3, result);
 	}
+	
+	@Test
+	public void addStringWithMultipleDelimiters2()
+	{
+		stringCalculator str = new stringCalculator();
+		int result = str.Add("//!\n1!2!3!4!5");
+		assertEquals(15, result);
+	}
 }
