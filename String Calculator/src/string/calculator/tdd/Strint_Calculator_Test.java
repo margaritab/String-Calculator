@@ -53,4 +53,13 @@ public class Strint_Calculator_Test {
 		int result = str.Add("1,2,3,4");
 		assertEquals(10, result);
 	}
+	
+	
+	@Test
+	public void addStringWithNewLines()
+	{
+		stringCalculator str = new stringCalculator();
+		int result = str.Add("1\n2,3");
+		assertEquals(6, result);
+	}
 }
