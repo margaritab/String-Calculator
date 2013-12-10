@@ -8,10 +8,15 @@ public class stringCalculator {
 			return 0;
 		if(str.contains(","))
 		{
-			String[] strings = str.split(",");
-			return Integer.parseInt(strings[0]) + Integer.parseInt(strings[1]);
+			return handleMultipalNumbers(str);
 		}
 		return Integer.parseInt(str);
+	}
+
+	private int handleMultipalNumbers(String str)
+	{
+		String[] strings = str.split(",");
+		return Integer.parseInt(strings[0]) + Integer.parseInt(strings[1]);
 	}
 
 }
