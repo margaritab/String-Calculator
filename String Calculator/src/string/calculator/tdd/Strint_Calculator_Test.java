@@ -36,4 +36,12 @@ public class Strint_Calculator_Test {
 		int result = str.Add("1,2");
 		assertEquals(3, result);
 	}
+	
+	@Test
+	public void addStringWithCommaTest2()
+	{
+		stringCalculator str = new stringCalculator();
+		int result = str.Add("3,6");
+		assertEquals(9, result);
+	}
 }
