@@ -44,4 +44,13 @@ public class Strint_Calculator_Test {
 		int result = str.Add("3,6");
 		assertEquals(9, result);
 	}
+	
+	
+	@Test
+	public void addStringWithUnknownAmountOfNumbers()
+	{
+		stringCalculator str = new stringCalculator();
+		int result = str.Add("1,2,3,4");
+		assertEquals(10, result);
+	}
 }
