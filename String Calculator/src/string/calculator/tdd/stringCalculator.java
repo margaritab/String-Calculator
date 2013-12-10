@@ -16,7 +16,12 @@ public class stringCalculator {
 	private int handleMultipalNumbers(String str)
 	{
 		String[] strings = str.split(",");
-		return Integer.parseInt(strings[0]) + Integer.parseInt(strings[1]);
+		int num = 0;
+		for(int i=0; i<strings.length; i++)
+		{
+			num+= Integer.parseInt(strings[i]);
+		}
+		return num;
 	}
 
 }
