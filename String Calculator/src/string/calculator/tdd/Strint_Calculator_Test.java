@@ -93,5 +93,19 @@ public class Strint_Calculator_Test {
 		
 	}
 	
+	@Test
+	public void addStringExceptionMultiNums() 
+	{
+		stringCalculator str = new stringCalculator();
+		int result = 0;
+		try
+		{
+		result = str.Add("//:\n-5:-1:-3:-2");
+		}catch(Exception e){
+			System.out.println(e.getMessage());
+		}
+		
+	}
+	
 
 }
