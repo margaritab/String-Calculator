@@ -7,14 +7,14 @@ import org.junit.Test;
 public class Strint_Calculator_Test {
 
 	@Test
-	public void addEmptyStringTest() {
+	public void addEmptyStringTest() throws Exception {
 		stringCalculator str = new stringCalculator();
 		int result = str.Add(" ");
 		assertEquals(0, result);
 	}
 	
 	@Test
-	public void addOneStringTest()
+	public void addOneStringTest() throws Exception
 	{
 		stringCalculator str = new stringCalculator();
 		int result = str.Add("1");
@@ -22,7 +22,7 @@ public class Strint_Calculator_Test {
 	}
 	
 	@Test
-	public void addTwoStringTest()
+	public void addTwoStringTest() throws Exception
 	{
 		stringCalculator str = new stringCalculator();
 		int result = str.Add("2");
@@ -30,7 +30,7 @@ public class Strint_Calculator_Test {
 	}
 	
 	@Test
-	public void addStringWithCommaTest()
+	public void addStringWithCommaTest() throws Exception
 	{
 		stringCalculator str = new stringCalculator();
 		int result = str.Add("1,2");
@@ -38,7 +38,7 @@ public class Strint_Calculator_Test {
 	}
 	
 	@Test
-	public void addStringWithCommaTest2()
+	public void addStringWithCommaTest2() throws Exception
 	{
 		stringCalculator str = new stringCalculator();
 		int result = str.Add("3,6");
@@ -47,7 +47,7 @@ public class Strint_Calculator_Test {
 	
 	
 	@Test
-	public void addStringWithUnknownAmountOfNumbers()
+	public void addStringWithUnknownAmountOfNumbers() throws Exception
 	{
 		stringCalculator str = new stringCalculator();
 		int result = str.Add("1,2,3,4");
@@ -56,7 +56,7 @@ public class Strint_Calculator_Test {
 	
 	
 	@Test
-	public void addStringWithNewLines()
+	public void addStringWithNewLines() throws Exception
 	{
 		stringCalculator str = new stringCalculator();
 		int result = str.Add("1\n2,3");
@@ -64,7 +64,7 @@ public class Strint_Calculator_Test {
 	}
 	
 	@Test
-	public void addStringWithMultipleDelimiters()
+	public void addStringWithMultipleDelimiters() throws Exception
 	{
 		stringCalculator str = new stringCalculator();
 		int result = str.Add("//;\n1;2");
@@ -72,7 +72,7 @@ public class Strint_Calculator_Test {
 	}
 	
 	@Test
-	public void addStringWithMultipleDelimiters2()
+	public void addStringWithMultipleDelimiters2() throws Exception
 	{
 		stringCalculator str = new stringCalculator();
 		int result = str.Add("//!\n1!2!3!4!5");
@@ -87,8 +87,10 @@ public class Strint_Calculator_Test {
 		try
 		{
 		result = str.Add("-1");
-		}catch(ArithmeticException e){}
-		assertEquals(15, result);
+		}catch(Exception e){
+			System.out.println(e.getMessage());
+		}
+		
 	}
 	
 

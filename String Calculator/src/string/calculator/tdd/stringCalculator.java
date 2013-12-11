@@ -2,7 +2,7 @@ package string.calculator.tdd;
 
 public class stringCalculator {
 
-	public int Add(String str) 
+	public int Add(String str) throws Exception 
 	{
 		if(str.equals(" "))
 			return 0;
@@ -13,25 +13,15 @@ public class stringCalculator {
 		return Integer.parseInt(str);
 	}
 
-	private int handleMultipalNumbers(String str)
-	{
-		/*String delimiter = ",|\n";
-		
-		String[] strings = str.split(delimiter);
-		int num = 0;
-		
-		for(int i=0; i<strings.length; i++)
-		{
-			num+= Integer.parseInt(strings[i]);
-		}
-		return num;*/
-		
+	private int handleMultipalNumbers(String str) throws Exception
+	{	
 		String delimiter = ",|\n";
 		
 		String[] strings = str.split(delimiter);
 		char[] arr;
 		
 		int num = 0;
+		String negatives = "";
 		
 		if(strings[0].contains("//"))
 		{
@@ -43,17 +33,26 @@ public class stringCalculator {
 				String[] stringDeli = strings[i].split(delimiter);
 				
 				for(int j=0; j<stringDeli.length;j++)
-					num+= Integer.parseInt(stringDeli[j]);
+				{
+					if(Integer.parseInt(stringDeli[j]) < 0)
+						negatives += stringDeli[j];
+					else
+						num+= Integer.parseInt(stringDeli[j]);
+				}
 			}
 		}
 		else
 		{
 			for(int i=0; i<strings.length; i++)
 			{
-				num+= Integer.parseInt(strings[i]);
+				if(Integer.parseInt(strings[i]) < 0)
+					negatives += strings[i];
+				else
+					num+= Integer.parseInt(strings[i]);
 			}
 		}
-		
+		if (!negatives.equals(""))
+			throw new Exception("negatives not allowed"+negatives);
 		return num;
 	}
 	
