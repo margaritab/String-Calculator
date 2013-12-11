@@ -78,4 +78,18 @@ public class Strint_Calculator_Test {
 		int result = str.Add("//!\n1!2!3!4!5");
 		assertEquals(15, result);
 	}
+	
+	@Test
+	public void addStringException() 
+	{
+		stringCalculator str = new stringCalculator();
+		int result = 0;
+		try
+		{
+		result = str.Add("-1");
+		}catch(ArithmeticException e){}
+		assertEquals(15, result);
+	}
+	
+
 }
